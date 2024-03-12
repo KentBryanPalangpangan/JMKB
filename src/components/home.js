@@ -1,0 +1,60 @@
+import React from 'react';
+import { View, StyleSheet,Image } from 'react-native';
+import { Text, Button } from 'react-native-paper';
+import JMKB from '../../assets/JMKB.png'
+const Home = ({ navigation }) => {
+    return (
+        <View style={styles.container}>
+             <View><Image source={JMKB} styles={styles.logoheader}/></View>
+           <Text style={styles.title}>Welcome to our website!</Text>
+            <View style={styles.buttonsContainer}>
+                <Button
+                    icon="logout"
+                    mode="contained"
+                    onPress={() => navigation.navigate('login')}
+                    style={styles.button}
+                    labelStyle={styles.buttonLabel}
+                >
+                    Logout
+                </Button>
+            </View>
+            
+        </View>
+    );
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 0.8,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#ffffff',
+        padding: 10
+    },
+    title: {
+        fontSize: 14,
+        marginBottom: 5,
+        fontWeight: 'bold',
+        color: 'black'
+    },
+    buttonsContainer: {
+        width: '60%'
+    },
+    button: {
+        marginTop: 10,
+        paddingVertical: 8,
+        borderRadius: 50,
+        backgroundColor: '#ADB3BC'
+    },
+    buttonLabel: {
+        fontSize: 14,
+        fontWeight: 'bold',
+        color: 'black'
+    },
+    Image: {
+      height: 50,
+      width: 50
+    },
+});
+
+export default Home
