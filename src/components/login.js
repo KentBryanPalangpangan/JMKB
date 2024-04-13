@@ -1,25 +1,37 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
 
 const Login = ({ navigation }) => {
-    const [showPassword, setShowPassword] = React.useState(false);
+    
+    const [showPassword, setShowPassword] = useState(false); 
+    const [email, setEmail] = useState(''); 
+    const [password, setPassword] = useState(''); 
+
+    const handleLogin = () => {
+        
+        navigation.navigate('Home');
+    };
 
     return (
         <View style={styles.content}>
             <TextInput
                 placeholder='Email'
-                label= 'Email'
+                label='Email'
                 style={styles.textInput}
+                value={email}
+                onChangeText={text => setEmail(text)}
             />
             <TextInput
                 placeholder='Password'
-                label= 'Password'
+                label='Password'
                 style={styles.textInput}
                 secureTextEntry={!showPassword}
+                value={password}
+                onChangeText={text => setPassword(text)}
                 right={
                     <TextInput.Icon
-                        icon={showPassword ? "eye" : "eye-off"}
+                        name={showPassword ? 'eye-off' : 'eye'}
                         onPress={() => setShowPassword(!showPassword)}
                     />
                 }
@@ -28,7 +40,7 @@ const Login = ({ navigation }) => {
                 <Button
                     icon="login"
                     mode="contained"
-                    onPress={() => navigation.navigate('home')}
+                    onPress={handleLogin} 
                     style={styles.button}
                     labelStyle={styles.buttonLabel}
                 >
@@ -37,18 +49,15 @@ const Login = ({ navigation }) => {
                 <Button
                     icon="account-plus"
                     mode="contained"
-                    onPress={() => navigation.navigate('registration')}
+                    onPress={() => navigation.navigate('Registration')}
                     style={styles.signupButton}
                     labelStyle={styles.buttonLabel}
                 >
                     Sign-up
                 </Button>
-                <Button
-                    onPress={() => navigation.navigate('accountrecovery')}
-                    labelStyle={styles.forgotPasswordLabel}
-                >
-                    Forgot Password?
-                </Button>
+                <TouchableOpacity onPress={() => navigation.navigate('AccountRecovery')}>
+                    <Text style={styles.forgotPasswordLabel}>Forgot Password?</Text>
+                </TouchableOpacity>
             </View>
         </View>
     );
@@ -56,7 +65,7 @@ const Login = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     content: {
-        flex: 1,
+        flex: 0.8,
         padding: 10,
         alignItems: 'center'
     },
@@ -89,6 +98,7 @@ const styles = StyleSheet.create({
     forgotPasswordLabel: {
         fontSize: 14,
         color: '#007bff',
+        textAlign: 'center',
     },
 });
 
