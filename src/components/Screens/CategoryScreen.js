@@ -44,10 +44,10 @@ const HistoryScreen = ({ route }) => {
           {selectedImage && (
             <Image source={selectedImage} style={styles.modalImage} />
           )}
-          <Text style={styles.modalText}>Norem</Text><Text>
+          <Text style={styles.modalText}>Norem</Text><Text style={styles.text}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id tortor ut elit varius commodo sit amet ac magna. Nullam euismod euismod lorem nec hendrerit. Suspendisse potenti. Sed interdum libero eget ante ultrices condimentum. Duis et elit eu massa commodo ultrices. Donec vel odio eu risus aliquam auctor. 
           </Text>
-          <Text>
+          <Text style={styles.text}>
             Phasellus eget libero id turpis fermentum scelerisque. Aliquam erat volutpat. Ut non ex et quam aliquam convallis.
           </Text>
           <Button title="Close" onPress={() => navigation.goBack()} />
@@ -86,10 +86,10 @@ const BiologyScreen = ({ route }) => {
           {selectedImage && (
             <Image source={selectedImage} style={styles.modalImage} />
           )}
-          <Text style={styles.modalText}>Norem</Text><Text>
+          <Text style={styles.modalText}>Norem</Text><Text style={styles.text}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id tortor ut elit varius commodo sit amet ac magna. Nullam euismod euismod lorem nec hendrerit. Suspendisse potenti. Sed interdum libero eget ante ultrices condimentum. Duis et elit eu massa commodo ultrices. Donec vel odio eu risus aliquam auctor. 
           </Text>
-          <Text>
+          <Text style={styles.text}>
             Phasellus eget libero id turpis fermentum scelerisque. Aliquam erat volutpat. Ut non ex et quam aliquam convallis.
           </Text>
           <Button title="Close" onPress={() => navigation.goBack()} />
@@ -132,10 +132,10 @@ const OtherScreen = ({ route }) => {
           {selectedImage && (
             <Image source={selectedImage} style={styles.modalImage} />
           )}
-          <Text style={styles.modalText}>Bread</Text><Text>
+          <Text style={styles.modalText}>Bread</Text><Text style={styles.text}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id tortor ut elit varius commodo sit amet ac magna. Nullam euismod euismod lorem nec hendrerit. Suspendisse potenti. Sed interdum libero eget ante ultrices condimentum. Duis et elit eu massa commodo ultrices. Donec vel odio eu risus aliquam auctor. 
           </Text>
-          <Text>
+          <Text style={styles.text}>
             Phasellus eget libero id turpis fermentum scelerisque. Aliquam erat volutpat. Ut non ex et quam aliquam convallis.
           </Text>
           <Button title="Close" onPress={() => navigation.goBack()} />
@@ -192,6 +192,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
+    backgroundColor: '#F0E68C',
   },
   categoryContainer: {
     width: '30%',
@@ -212,6 +213,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#F0E68C',
   },
   imageGrid: {
     flexDirection: 'row',
@@ -234,6 +236,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#F0E68C', // Background color for modal container
   },
   modalImage: {
     width: 200,
@@ -243,7 +246,12 @@ const styles = StyleSheet.create({
   modalText: {
     fontSize: 24,
     marginBottom: 20,
+    textAlign: 'center',
   },
+  text: {
+    textAlign: 'center',
+  }
 });
+
 
 export default CategoryScreen;

@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#F0E68C', // Changed background color
     padding: 20,
   },
   heading: {
@@ -62,11 +62,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   button: {
-    backgroundColor: '#2196F3',
+    backgroundColor: '#96001c', // Change the background color
     paddingVertical: 15,
     paddingHorizontal: 40,
     borderRadius: 30,
     marginBottom: 20,
+    width: 250, // Set a fixed width for all buttons
+    alignItems: 'center', // Center text horizontally
+    justifyContent: 'center', // Center text vertically
   },
   buttonText: {
     color: 'white',
@@ -75,4 +78,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ServicesScreen
+export default ServicesScreen;

@@ -4,14 +4,14 @@ import Cake from  '../../../assets/Cake.png';
 import Bread3 from  '../../../assets/Bread3.png';
 import Bread from  '../../../assets/Bread.png';
 import Cake2 from '../../../assets/Cake2.png';
+
 const FavoritesScreen = () => {
   
   const favoriteItems = [
-    { id: '1', name: 'Favorite Cake', image:Cake},
-    { id: '2', name: 'Favorite Bread', image:Bread },
-    { id: '3', name: 'Favorite Bread', image:Bread3 },
-    { id: '4', name: 'Favorite Cake', image:Cake2 },
-    
+    { id: '1', name: 'Favorite Cake', image: Cake },
+    { id: '2', name: 'Favorite Bread', image: Bread },
+    { id: '3', name: 'Favorite Bread', image: Bread3 },
+    { id: '4', name: 'Favorite Cake', image: Cake2 },
   ];
 
   
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#F0E68C', // Changed background color
   },
   title: {
     fontSize: 24,
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 20,
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#F0F0F0',
     borderRadius: 10,
     padding: 10,
   },

@@ -3,31 +3,50 @@ import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 const FilterScreen = () => {
   const [filterMode, setFilterMode] = useState('dark');
+  const [filterPastries, setfilterPastries] = useState([]);
 
+  // Sample function to apply filter logic
   const applyFilter = () => {
-    console.log('Applying filter:', filterMode);
-    // Add your logic to apply the filter here
+    // This is a placeholder for your actual logic to filter books based on the selected mode
+    const filterPastries = []; // Placeholder, replace with your actual logic
+    setfilterPastries(filterPastries);
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>Filter Books</Text>
+    <View style={[styles.container, {backgroundColor: '#F0E68C'}]}>
+      <Text style={styles.heading}>Filter Pastries</Text>
 
       <TouchableOpacity
         style={[styles.filterButton, filterMode === 'dark' && styles.darkMode]}
-        onPress={() => setFilterMode('dark')}>
+        onPress={() => {
+          setFilterMode('dark');
+          setfilterColor('#96001c');
+        }}>
         <Text style={styles.filterButtonText}>Dark Theme</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
         style={[styles.filterButton, filterMode === 'light' && styles.lightMode]}
-        onPress={() => setFilterMode('light')}>
+        onPress={() => {
+          setFilterMode('light');
+          setfilterColor('#96001c');
+        }}>
         <Text style={styles.filterButtonText}>Light Theme</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.applyButton} onPress={applyFilter}>
         <Text style={styles.applyButtonText}>Apply Filter</Text>
       </TouchableOpacity>
+
+      {/* Display filtered books */}
+      <View style={styles.filterPastriesContainer}>
+        <Text style={styles.filterPastriesHeading}>Filtered Pastries:</Text>
+        {filterPastries.map((book, index) => (
+          <Text key={index} style={styles.filteredBook}>
+            {book.title}
+          </Text>
+        ))}
+      </View>
     </View>
   );
 };
@@ -37,7 +56,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f0f0f0',
     padding: 20,
   },
   heading: {
@@ -73,6 +91,18 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
+  filterPastriesContainer: {
+    marginTop: 30,
+  },
+  filterPastriesHeading: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  filteredBook: {
+    fontSize: 16,
+    marginBottom: 5,
+  },
 });
 
-export default FilterScreen
+export default FilterScreen;

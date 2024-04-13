@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#F0E68C', // Modified background color
     padding: 20,
   },
   heading: {
@@ -101,4 +101,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen
+export default HomeScreen;

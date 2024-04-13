@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    backgroundColor: '#F0E68C',
   },
   screen: {
     flex: 1,

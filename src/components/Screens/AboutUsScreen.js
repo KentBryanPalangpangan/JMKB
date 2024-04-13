@@ -22,6 +22,10 @@ const AboutUsScreen = () => {
             <Text>Kent Bryan T. Palangpangan</Text>
           </View>
         </View>
+        
+        {/* Separator */}
+        <View style={styles.separator}></View>
+        
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Co-founder:</Text>
           <View style={styles.profileContainer}>
@@ -33,12 +37,13 @@ const AboutUsScreen = () => {
             <Text>John Mike D. Soldahon</Text>
           </View>
         </View>
+
         <Text style={styles.sectionTitle}>Our System</Text>
 
-        <Text>
+        <Text style={styles.text}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id tortor ut elit varius commodo sit amet ac magna. Nullam euismod euismod lorem nec hendrerit. Suspendisse potenti. Sed interdum libero eget ante ultrices condimentum. Duis et elit eu massa commodo ultrices. Donec vel odio eu risus aliquam auctor.
         </Text>
-        <Text>
+        <Text style={styles.text}>
           Phasellus eget libero id turpis fermentum scelerisque. Aliquam erat volutpat. Ut non ex et quam aliquam convallis.
         </Text>
       </View>
@@ -50,6 +55,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+    backgroundColor: '#F0E68C', // Change background color here
   },
   heading: {
     fontSize: 24,
@@ -67,7 +73,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 5,
     fontSize: 18,
-    alignItems: 'center',
+    textAlign: 'center',
   },
   profileContainer: {
     alignItems: 'center',
@@ -78,9 +84,16 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     marginBottom: 10,
   },
+  separator: {
+    width: '100%',
+    height: 1,
+    backgroundColor: 'gray', // Change color as desired
+    marginBottom: 20,
+  },
   text: {
-    alignItems: 'center',
+    textAlign: 'center',
   }
 });
+
 
 export default AboutUsScreen;
